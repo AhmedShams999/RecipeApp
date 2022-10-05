@@ -1,0 +1,241 @@
+
+
+body{
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Roboto,sans-serif;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  background-image: linear-gradient(to right top, #f88833, #fa7521, #fc5e11, #fd4203, #ff0000);
+  
+}
+
+hr{
+  width: 1000px;
+  border: 1px solid #142b4e;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+header {
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1{
+  color: #142b4e
+}
+header .search{
+  outline: none;
+  padding-left: 10px;
+  font-size: 15px;
+  color: white;
+  font-weight: 700;
+  width: 28rem;
+
+  border: none;
+  height: 30px;
+  background: transparent;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+header .search-btn{
+  padding: 15px 20px;
+  font-size: 1rem;
+  margin: 10px 0;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #142b4e;
+  cursor: pointer;
+  transition: background-color 0.2s ,color 0.2s;
+}
+header .search-btn:hover{
+  background-color: #142b4e;
+  color: white;
+}
+
+main{ 
+   display: grid;
+   grid-template-columns: repeat(5,18rem);
+   grid-auto-rows: minmax(28rem,auto);
+   gap: 25px;
+}
+
+main .meal{
+  width: 100%;
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+main .meal .meal-img{
+  flex: 2;
+  border-radius: 15px; 
+  background-color: #f88833;
+}
+main .meal .food-img{
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 15px; 
+  border-top-right-radius: 15px; 
+  object-fit: cover;
+}
+main .meal .meal-name{
+  flex: 1;
+  text-align: center;
+  
+}
+
+main .meal .meal-name .show-meal-recipe-btn{
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #142b4e;
+  cursor: pointer;
+  transition: background-color 0.2s ,color 0.2s;
+}
+main .meal .meal-name h2{
+  color: #142b4e;
+
+  margin: 10px 0;
+  font-weight: bold;
+}
+main .meal .meal-name .show-meal-recipe-btn:hover{
+  background-color: #142b4e;
+  color: white;
+}
+
+.overlay{
+  position: fixed;
+  top: 100px;
+  bottom: 100px;
+  left: 500px;
+  right: 500px;
+  background-color: #142b4e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x:hidden;
+  overflow-y:scroll;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+}
+.overlay .text{
+  width: 40rem;
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  margin-top: 0;
+  color: #f88833;
+}
+.overlay h3{
+  color: #f88833;
+  margin-bottom: 5px;
+}
+.overlay h2{
+  color: #f88833;
+  margin-bottom: 5px;
+}
+.overlay::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+.overlay::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+.overlay::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+.overlay .close{
+  position: absolute;
+  right: 0;
+  margin: 15px 15px 0 0;
+  padding: 15px;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ;
+  border: none;
+  background: transparent;
+}
+.overlay .close:hover{
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+.overlay .recipe-img{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+.overlay a{
+  text-decoration: none;
+  color: #fd4203;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 10px;
+  transition: box-shadow 0.2s ;
+  
+}
+.overlay a:hover{
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.show-overlay{
+  opacity: 1;
+  pointer-events:visible ;
+  transition: opacity 1s;
+}
+
+@media screen and (max-width: 800px){
+  main{
+    grid-template-columns: repeat(1,28rem);
+    grid-auto-rows: minmax(40rem,auto);
+ }
+ main .meal .meal-name .show-meal-recipe-btn{
+  margin-top: 30px;
+ }
+ hr{
+  width: 500px;
+ }
+}
+@media screen and (max-width: 1000px)and (min-width: 800px) {
+  main{
+    grid-template-columns: repeat(2,25rem);
+    grid-auto-rows: minmax(38rem,auto);
+ }
+ hr{
+  width: 800px;
+ }
+ 
+}
+@media screen and (max-width: 1800px)  and (min-width: 1000px){
+  main{
+    grid-template-columns: repeat(3,20rem);
+    grid-auto-rows: minmax(30rem,auto);
+ }
+ hr{
+  width: 1200px;
+ }
+}
