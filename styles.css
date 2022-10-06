@@ -1,9 +1,8 @@
 
 
 body{
-  width: 100%;
   min-height: 100vh;
-  margin: 0;
+
   font-family: Roboto,sans-serif;
   display: flex;
   justify-content: flex-start;
@@ -21,7 +20,7 @@ hr{
 }
 
 header {
-
+  text-align: center;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -210,20 +209,34 @@ main .meal .meal-name .show-meal-recipe-btn:hover{
 
 @media screen and (max-width: 800px){
   main{
-    grid-template-columns: repeat(1,28rem);
+
+    grid-template-columns: repeat(1,20rem);
     grid-auto-rows: minmax(40rem,auto);
  }
  main .meal .meal-name .show-meal-recipe-btn{
   margin-top: 30px;
  }
  hr{
-  width: 500px;
+  width: 350px;
+ }
+ header .search{
+  width: 22rem;
+ }
+ .overlay{
+  top:15px;
+  bottom:450px;
+  right:15px;
+  left:15px;
+ }
+ .overlay .text{
+  width: 20rem;
+  font-size: 0.8rem;
  }
 }
 @media screen and (max-width: 1000px)and (min-width: 800px) {
   main{
-    grid-template-columns: repeat(2,25rem);
-    grid-auto-rows: minmax(38rem,auto);
+    grid-template-columns: repeat(2,28rem);
+    grid-auto-rows: minmax(40rem,auto);
  }
  hr{
   width: 800px;
