@@ -227,11 +227,15 @@ main .meal .meal-name .show-meal-recipe-btn:hover{
   bottom:15px;
   right:15px;
   left:15px;
+  overflow: scroll;
  }
  .overlay .text{
   width: 20rem;
   font-size: 0.8rem;
  }
+ .overlay::-webkit-scrollbar {
+  width: 0.5em;
+}
 }
 @media screen and (max-width: 1000px)and (min-width: 800px) {
   main{
